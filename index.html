@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+WELCOME USER! You've reached the source code for a manual created by STS. If you plan on updating or editing this manual, then you're in the right place!
+
+Before editing any STS manuals, please read through the editing guide at https://sts.doit.wisc.edu/manual-editing-guide and follow all recommendations. It is important that we follow the conventions set in the guide in order to maintain quality and consistency across all of our training materials.
+
+Good luck, and have fun!
+-->
+
+
+    <head>
+        <!-- Manual title -->
+        <title>MATLAB 1</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Software manual provided by Software Training for Students at the University of Wisconsin.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' id='uwmadison-fonts-css'  href='https://brand.wisc.edu/content/themes/uw-theme/dist/fonts/uw160/fonts.css?ver=1.1.1' type='text/css' media='all' /><link rel="stylesheet" type="text/css" href="../master-files/css/stylesheet.css">
+        <script src="../master-files/highlight.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="../master-files/smooth-scroll.js"></script>
+        <script src="../master-files/primary-functions.js"></script>
+        <script src="../master-files/ga.js"></script>
+    </head>
+
+    <body>
+        <!-- begin front page -->
+        <div class="manual-front-page">
+            <div id="coverpage-title">
+                <h1>MATLAB 1</h1>
+                <h2>Introduction to MATLAB</h2>
+            </div>
+            <div id="about-page"></div>
+            <div id="outline"></div>
+            <section class="topic">
+                <h1>Introduction</h1>
+                <p><strong>MATLAB</strong> is an advanced computing environment that is used in a diverse array of applications: mathematics, signal processing, control design, financial modeling, statistical analysis and computational biology. MATLAB contains an interactive environment to perform calculations and data analysis, and to create graphs, pictures and movies. Additionally, MATLAB contains a programming language that allows one to create reusable functions, procedures and algorithms. MATLAB gets its name from “MATrix LABoratory” and fittingly, matrices are the basis of almost all of MATLAB’s calculations. This class will work through the basics of using the MATLAB interface and basic syntax of the programming language.
+                </p>
+                <h2>About this Class</h2>
+                <p>This class will give an introduction to MATLAB, focusing on array creation and manipulation, and plotting. In this class we will be analyzing how the gravity of different planets in our solar system effect a falling ball.</p>
+                <h2>Prerequisites</h2>
+                <p>None.</p>
+                <h2>Other requirements</h2>
+                <li> A basic understanding of computers.</li>
+                <li> Some math experience is recommended</li>
+                <h2>MATLAB Interface</h2>
+                <p>The MATLAB interface consists of different panels, which can be moved about the screen. Some panels may be combined in one window and their names are shown on different tabs. Clicking on a tab will bring that panel to the front. Different panels can be managed from the layout menu in the environment tab at the top of the screen. The default interface varies between versions of MATLAB</p>
+            </section>
+            <section class="topic">
+                <h1>MATLAB Interface</h1>
+                <h2>Lanching MATLAB</h2>
+                <ol>
+                    <li> Click the Windows Start icon on the bottom left corner of the screen.</li>
+                    <li> Type MATLAB into the search bar and click on <strong>“MATLAB 2014a”</strong>. A window like the one below will be seen.</li>
+                </ol>
+                <img src="images/lanching-matlab1.PNG" alt="launching MATLAB">
+                <h2>MATLAB Environment</h2>
+                <h3>Command Window</h3>
+                <p>The Command Window is the main screen of MATLAB. This is the area where calculations are entered and instructions are given to MATLAB. It also displays the results of the calculations and any errors in your code.</p>
+                <img src="images/command-window1.PNG" alt="command window">
+                <p></p>
+                <h2>Workspace</h2>
+                <p>The Workspace panel shows all of the variables that MATLAB currently has stored. The panel also gives information about the value or size of the variable, a description if one exists, and the max and min of the variable. Double clicking on any variable will open a spreadsheet that shows what the variable contains and allows you one way to edit the variable.
+                </p>
+                <img src="images/workspace1.PNG" alt="workspace">
+                <h2>Command History</h2>
+                <p>The Command History panel shows all of the instructions and/or calculations that have been entered in the Command Window. Double clicking on any line in the Command History will rerun that command. </p>
+                <p>To display the Command History go to the environment panel towards the upper middle part of the screen. Select <strong>Layout > Command History > Docked</strong>.</p>
+                <img src="images/command-history1.PNG" alt="command">
+                <h2>Current Folder</h2>
+                <p>The Current Folder panel shows all of the user files and functions that are available for MATLAB to access. The Current Directory can be changed by entering a new path in the <strong>Current Folder box</strong> at the top of the screen.</p>
+                <img src="images/current-folder1.PNG" alt="current folder">
+            </section>
+            <section class="topic">
+                <h1>M Code</h1>
+                <h2>Basic Operators</h2>
+                <p>The simplest use of MATLAB and M Code is using the Command Window as a calculator. </p>
+                <p>At the command prompt, enter <strong>2 + 5</strong></p>
+                <img src="images/basic-operators2.PNG" alt="basic operators 2">
+                <p>You can see that MATLAB responds with the answer. Notice that <strong>extra whitespace is ignored in MATLAB</strong>. MATLAB can understand all of the basic operators.</p>
+                <p>Try entering some of these: </p>
+                <ul>
+                    <li>9000 - 523</li>
+                    <li>50 * 25</li>
+                    <li>30 / 10</li>
+                    <li>30^2 + 25</li>
+                </ul>
+                <img src="images/basic-operators3.PNG" alt="basic operators 3">
+                <aside>MATLAB remembers every line that you type. To access previous lines, press the up arrow at the command prompt.
+                </aside>
+                <p>Additionally, MATLAB can understand more advanced operators. </p>
+                <ul>
+                    <li>sin(90)</li>
+                    <li>cos(sin(90^2))</li>
+                    <li>atan(.5)</li>
+                </ul>
+                <img src="images/basic-operators4.PNG" alt="basic operators 4">
+                <p>Finally, MATLAB has some built-in numbers. For instance, instead of entering <strong>3.14159</strong>, you can just type in <span class="type">pi</span>.
+                <ul>
+                    <li>pi - 3.14159</li>
+                    <li>eps - the floating point precision of MATLAB</li>
+                    <li>inf - infinity</li>
+                </ul>
+                </p>
+            <h2>Storing Variables</h2>
+            <p>You may have noticed that during those operations, MATLAB returned the answer and on the line above that, it said <strong>“ans =”</strong>. </p>
+            <p>Additionally, you can note that <strong>“ans”</strong> was added to the Workspace window and its value is the result of the last operation</p>
+            <img src="images/storing-variables1.PNG" alt="storing variables 1">
+            <p> <em>“Ans”</em> is a default variable created by MATLAB to store the answer of the most recent operation performed in the Command Window. A <em>variable</em> is a reference to a memory location that contains a value. The usefulness of variables is that they can be quickly and easily referenced later. For example, it is easier to remember pi, than 3.14159.</p>
+            <ol class="instruction-list">
+                <li>At the command prompt, enter <strong>ans</strong>.</li>
+                <p>You can see that it displays the value held inside of that variable. You can also use <strong>"ans"</strong> in new calculations.</p>
+                <p>In addition to the <strong>"ans"</strong> variable, you can create any variable that you want and assign it a value.</p>
+                <p>For example, let’s set up the <strong>radius, volume and mass</strong> of our ball.</p>
+                <li>At the Command Prompt, enter <strong>radius =</strong> 5 </li>
+                <li>Enter <strong>volume = 3/4 * pi * radius ^ 3</strong>; </li>
+                <li>Enter <strong>mass = 50;</strong></li>
+                </p>
+            </ol>
+        <img class="center border" src="images/storing-variables2.PNG" alt="storing variables 2">
+        <img class="center border" src="images/storing-variables3.PNG" alt="storing variables 3">
+        <aside class="good-to-know">It is customary to use lower case letters for variable names. If the name is multiple words, it is customary to use camelCase, meaning the first word is lowercase and every subsequent word starts with a capital letter: e.g. variableNameInCamelCase.</aside>
+        <p>When you hit enter, you can see that instead of <strong>“ans=”</strong>, MATLAB displays the variable name and then its value.</p>
+        <p>For the “mass” variable, MATLAB didn’t display anything. The reason for this is that we included a semicolon at the end of the line. A semicolon tells MATLAB to store the variable and not to display anything on the screen. As we work with more values, we will want to make use of the semicolon more often.</p>
+        <p>MATLAB can determine the data type of any variable without any explicit definition. MATLAB variables can store Boolean, numeric or text data. The variable names are case sensitive
+        </p>
+        </section>
+    <section class="topic">
+        <h1>Arrays and Matrices</h1>
+        <p><strong>Arrays</strong> are one of the basic building blocks of MATLAB. An <em>array</em> is a structure that allows you to store multiple values under one name. Any type (numeric, boolean, strings) of information can be stored in an array and its size is adjustable.
+        </p>
+        <img src="images/arrays-matrices1.PNG" alt="arrays matrices 1">
+        <p>Visually, an <em>array</em> can be represented as a grid, where each cell represents an open area for information. There are many ways to create and access arrays in MATLAB.</p>
+        <h2>Storing and Retrieving Data</h2>
+        <p>One way to create an array is to type in the values individually by hand. Let’s try creating an array to hold the different gravitational pulls of each of the planets and an array that holds the order of the planets from the sun.
+        </p>
+        <h2>Making Arrays</h2>
+        <ol class="instruction-list">
+            <li>
+                At the command prompt, enter <strong>gravity = [3.7, 8.9, 9.8, 4.0, 24.9, 10.5, 8.2, 11.7, .78, 15]</strong>
+            </li>
+            <img class="border" src="images/making-arrays1PNG.PNG" alt="making arrays 1">
+            <li>Enter <strong>order = [ 1 2 3 4 5 6 7 8 9 10]</strong>
+            </li>
+            <p>Notice that all of the values are contained within brackets. This signals MATLAB that you are working with an array. Within the brackets, either <strong>spaces</strong> or <strong>commas</strong> can be used to separate individual values from one another. Finally, only values of the same data type <strong>(numbers, strings, etc.)</strong> can be stored in the same array.</p>
+            <p> Let’s create another array containing the values of <strong>“time”</strong> that we want to analyze. We will use a different way to create this array.</p>
+            <p>In this method, we can specify a starting value, an increment value and an end value, and then MATLAB will automatically generate the values and store them in the array. </p>
+            <li>At the Command Prompt, enter time =<strong> [0:5:50] </strong>
+            </li>
+
+            <img class="border" src="images/making-arrays2.PNG" alt="making arrays 2">
+            <p>Note: that the default increment value is 1 and doesn’t need to be entered. For example, time = <strong>[0:1:50]</strong> can be written as time = <strong>[0:50]</strong>. We will be using this throughout this course</p>
+        </ol>
+        <h2>Indexing Arrays</h2>
+        <p>Now that we have our arrays, we can call values from them. Unlike many other programming languages, arrays in MATLAB are 1-indexed, meaning the array starts counting at 1 (rather than starting counting at 0, which is how many other popular languages work).</p>
+        <p>To call a value from an array, type in the name of the <strong>array</strong> followed by the <strong>index</strong> you want, in parentheses. Let’s try retrieving the second planet’s gravity and the second time value.</p>
+        <ol class="instruction-list"><li>At the Command Prompt, enter <strong>gravity(2), time(2)</strong></li>
+            <img class="border" src="images/indexing-arrays1.PNG" alt="indexing arrays 1">
+            <p><strong>Variables</strong> can also be used as indices.</p>
+            <li>At the Command Prompt, enter <strong>test = 4;</strong></li>
+            <li>Enter <strong>gravity(test)</strong> and notice the value that returns.</li> 
+            <p>You can also retrieve multiple values at once from an array.</p>
+            <p>For example, if you wanted to look at the middle 3 planets’ gravities, you can call all of those values at once. To do that, you use the “:” operator. We saw the colon operator earlier, when we were creating arrays to fill in values for us. The same idea applies when we are calling values.</p>
+            </p>
+        <li>At the Command Prompt, enter gravity(<strong>2:4</strong>)
+        </li>
+        </ol>
+    <img src="images/indexing-arrays2.PNG" alt="indexing arrays 2">
+    <p>This returned values <strong>2</strong> through<strong> 4</strong> from the gravity array.
+    </p>
+    <h2>Matrices</h2>
+    <p>In addition to one dimensional arrays, MATLAB can also store multidimensional arrays, also known as matrices.
+    <p>To create a <em>matrix</em>, the same notation is used; however, a semicolon within the brackets is used to separate between <em>rows</em> of the matrix. Let’s create a matrix.</p>
+
+    <ol class="instruction-list">
+        <li>At the Command Prompt, enter numbers = [<strong>1:5; 2 4 6 8 10; 1:2:9</strong>]</li>
+        <img src="images/matrices1PNG.PNG" alt="matrices 1">
+        <p>This will create a 2 dimensional matrix with <strong>5 columns</strong> and <strong> 3 rows </strong>.
+        <p> Accessing the values of a matrix works the same way as with an array, except that two indices are required. The first specifies the row and the second specifies the column. To call all of the values in a row or column, the colon operator can be used</p>
+        <li>At the Command Prompt, enter <strong>numbers(2,3</strong>)</li>
+        <li>At the Command Prompt, enter <strong>numbers(2,:)</strong> </li>
+    </ol>
+    <img src="images/matrices2.PNG" alt="matrices 2">
+    <h2>Changing Values</h2>
+    <p>After values have been entered in an array, those values can be overwritten or new values can be added. To overwrite a value, simply reassign that value to something new.</p>
+    <p>To enter a new value, assign the next index (remember that ‘=’ is used to assign values to a variable).</p>
+    <div class="important">Be careful when manually updating items in an array; it is very easy to accidentally overwrite data by making index errors.</div>
+
+    <ol class="instruction-list">
+        <li>Enter gravity(11) = 1.75 </li>
+        <li>Enter numbers(3,5) = 11 </li>
+        <li>Enter numbers(4,5) = 5</li>
+    </ol>
+
+    <img src="images/changing-values1.PNG" alt="changing values 1">
+    <p><em>When you add a single value to a matrix, MATLAB keeps the matrix square and fills in the missing values with zeroes.</em></p>
+    <h2>Deleting Values</h2>
+    <p>To delete a value from an array, set the value to “[]”. Let’s delete the gravity value we entered for the 11th planet.</p>
+    <ol class="instruction-list">
+        <li>At the Command Prompt, enter <strong>gravity(11) =[]</strong></li>        
+        <p>MATLAB doesn’t allow you to delete a single value from a matrix, because that would result in a nonrectangular matrix. Instead, you can delete an entire row or column.</p>
+        <aside>Remember that the colon operator is used to refer to an entire row or column.</aside>
+        <li>At the Command Prompt, enter <strong>numbers(3,:) = []</strong></li>
+
+    </ol>
+    <h2>Manipulating Arrays and Matrices</h2>
+    <p>MATLAB provides many ways to manipulate matrices. Operations involved concatenating, or joining, arrays together to form larger arrays or matrices; or performing calculations on the numbers in the array</p>
+    <h3>Concatenating Arrays</h3>
+    <p>Let’s start with combining the arrays containing the order of the planets and their gravities. The default direction for an array is horizontal - meaning that it only has 1 row. So, if we try combining the gravity and the order arrays, we would end up with an array that is 1 row by 20 columns. In this situation, we want an array with 10 rows and 2 columns, which means that we need to transpose (or flip the direction) the arrays and then concatenate them.</p>
+    <ol class="instruction-list">
+        <li>At the Command Prompt, enter combined = [order’ gravity’]</li>
+    </ol>
+
+    <img src="images/concatenating-arrays1.PNG" alt="c arrays 1">
+    <p><em>The brackets are used as previously to create the matrix. They automatically take the values and store them next to each other. The ‘ works to transpose the arrays.</em></p>
+    <h3>Calculating with Arrays and Matrices</h3>
+    <p>Another way to manipulate matrices is to perform calculations on them. MATLAB allows for many mathematical operations on matrices. Let’s start calculating the distance traveled by the ball on each planet.</p>
+    <p>From basic physics, we know the equation is <strong>distance = 0.5*gravity*time2</strong>. </p>
+
+    <ol class="instruction-list">
+        <li>At the Command Prompt, enter <strong>halfGrav = .5 * gravity</strong></li> 
+        <p>This multiplies every value in the gravity array by .5. Some operations are a little different when applied to matrices. For instance, if we time2, that would multiply the time array by itself, when what we really want is to square each value in the matrix. To do that, we need to use the dot operator.</p>
+        <li>At the Command Prompt, <strong>enter timeSquared = time.^</strong></li>
+        <p><em>The dot operator</em> is used whenever you want to perform something on each individual value in a matrix, instead of using the rules of matrix multiplication.</p>
+        <p>The final step in our calculation of the distance travelled is to multiply the halfGrav matrix by the timeSquared matrix, but we must follow rules of matrix multiplication. That is, the first matrix must have the same number of columns as the second matrix has rows.</p>
+
+
+        <img src="images/calculating1.PNG" alt="calculating 1">
+        <p>In our situation, we need to transpose (<strong>flip</strong>) the halfGrav array so that it has the right number of columns.</p>
+        <li>At the Command Prompt, <strong> enter distance = halfGrav’ * timeSquared</strong>
+            <p>We now have a matrix that tells us how far each ball fell at different points in time on different planets. The rows correspond to each planet and the columns correspond to each time point.</p>
+    </ol>
+
+<h3>Built-In Functions</h3>
+<p>In addition to calculations, MATLAB has many built-in functions that can return information about the array. We are just going to talk about some of the basic functions. First, say we want to sum the values in our numbers matrix. We are going to search for a function to do this sum. </p>
+<ol class="instruction-list">
+    <li>1. At the Command Prompt, enter <strong>help sum</strong></li>
+    <p>MATLAB returns information about the function and a link to the help file that gives more information about the function. You can see that “sum” will sum across each column in a multidimensional array. </p>
+    <li>At the Command Prompt, enter <strong>sum(numbers)</strong></li> 
+    <p>Some other common functions are:</p>
+    <table>
+        <tbody>
+            <tr><th>Function</th><th>Output</th></tr>
+            <tr><td>exp(x)</td><td>Exponent of x</td></tr>
+            <tr><td>sqrt(x)</td><td>Exponent of x</td></tr>
+            <tr><td>log(x)</td><td>Equivalent to ln(x)</td></tr>
+            <tr><td>log10(x)</td><td>Equivalent to log(x)</td></tr>
+            <tr><td>mod(x,y)</td><td>Modulus of y divided by x</td></tr>
+            <tr><td>round(x)</td><td>x rounded to the nearest whole number</td></tr>
+            <tr><td>size(x)</td><td>Returns the number of rows and columns in the matrix</td></tr>
+        </tbody>
+    </table>
+    <p>MATLAB also allows users to write their own functions, but that is beyond the scope of this class.
+    </p>
+</ol>
+<h3>Built-In Matrices</h3>
+<p>MATLAB also comes with some built-in matrices that are useful in a variety of situations. They can provide easy access to some commonly used matrices, such as:
+    <li> <strong>Identity matrix</strong> - a square matrix with a main diagonal of ones and zeros everywhere else</li>
+    <li> <strong>Magic matrix</strong> - a square matrix where every row and column sum are equal</li>
+    <li> <strong>Random matrix</strong> - a matrix of pseudorandom numbers</li>
+<p><em>To access a built-in matrix, you need to specify the size and the type of matrix.</em>
+<ol class="instruction-list">
+        <li>At the Command Prompt, enter <strong>eye(5)</strong> </li>
+        <li>Enter <strong>magic(4)</strong></li>
+        <li>Enter <strong>rand(4)</strong></li>
+    </ol>
+</p>
+</section>
+<section class="topic">
+    <h1>MATLAB Scripts</h1>
+    <P>Scripts are MATLAB files that contain snippets of reusable code or functions. Most programming in MATLAB is done in a Script and then run in the Command Window. This is advantageous, because it is easy to go back and edit your code or make changes to values. Additionally, when you incorporate control logic or loops (which is beyond the scope of this class), Scripts are even more useful.</P>
+    <h2>Using Scripts</h2>
+    <p>Let’s try to write a Script for our distance calculation. </p>
+    <ol class="instruction-list">
+        <li>Click the New Script button in the upper left corner of the screen. This opens up the Editor.</li>
+        <li>Enter the following code into the Script:</li>
+        <img src="images/using-scripts1.PNG" alt="using scripts 1">
+        <p>Instead of manually entering the code, you can also drag lines of code from the Command History palette directly into the Script. </p>
+        <li>Find the line distance = <em>halfGrav’ * timeSquared</em> in the Command History palette and drag it into your Script.</li>
+        <img src="images/using-scripts2.PNG" alt="using scripts 2">
+        <p>To test out the code, we can highlight and press <strong>F9</strong>. We can also save the Script and write out the name of the file in Command Window. </p>
+        <li>
+            <p>Press the <em>save button</em> at the top right corner of the page.</p>
+        </li> <img src="images/using-scripts3.PNG" alt="using scripts 3">
+        <li>Save the file as <strong>“distanceCalculation.m”</strong>.</li>
+        <li> At the Command Prompt, enter <strong>distanceCalculation</strong>. Although our matrix was not displayed, the code did compute. We can see this if we enter distance = <em>0</em> and then re-enter <em>distanceCalculation</em>. Looking at our workspace, the variable distance changes from a <strong>value of 0 to a matrix of 10 x 11.</strong></li>
+        </p>
+    </ol>
+</section>
+<section class="topic">
+    <h1>Plotting</h1>
+    <p>Another powerful feature of MATLAB is its plotting ability. MATLAB can create a multitude of graphs, such as line graphs, bar graphs, contour graphs, 3D graphs and weather maps. MATLAB can also create movies, which are a series of graphs shown sequentially.
+    </p>
+    <h2>2D Plotting</h2>
+    <p>We will start by plotting the distance vs time graph from the data we created during the start of this class, using the plot function. The plot function plots each column of a matrix as a different series. Therefore, we again need to transpose our distance matrix, so that we can plot each planet as its own series. </p>
+    <p>1. At the Command Prompt, <em>enter plot(distance’)</em>
+    </p>
+    <img src="images/2D-plotting1.PNG" alt="2D Plotting 1">
+    <ol class="instruction-list">
+        <li> Enter <em>title</em> (‘Distance traveled by Each Ball at a Given Time’)</li>
+        <li>Enter <em>xlabel</em> (‘Time’)</li>
+        <li> Enter <em>ylabel</em> (‘Distance’) Finally, we can also enter a legend to assign each line to a planet.</li>
+        <li> Enter <em>legend</em> (‘Mercury’, ’Venus’, ’Earth’, ‘Mars’, ‘Jupiter’, ‘Saturn’, ‘Neptune’, ‘Uranus’, ‘Pluto’, ‘Planet X’)</li>
+    </ol>
+    <img src="images/2d-plotting%202.PNG" alt="2D plotting 2">
+    <h2>3D Plotting</h2>
+    <p>MATLAB also allows us to plot in three dimensions. We will use some built-in functions to generate a 3D graph. The meshgrid function is used to create the arrays passed to the peaks function. The peaks function is useful for demonstrating 3D graphing; it takes two variables and creates mountains from the data. Finally, the mesh function displays the graph. </p>
+    <ol class="instruction-list">
+        <li>At the Command Prompt, enter <strong>[X,Y] = meshgrid(-3:.125:3);</strong></li>
+        <li>Enter <strong>Z = peaks(X,Y);</strong></li>
+        <li>Enter <strong>mesh(X,Y,Z)</strong></li>
+        <img src="images/3d-plotting1.PNG" alt="3d plotting 1">
+        <li>
+            Enter <strong>surf(Z)</strong>
+        </li>
+    </ol> <img src="images/3D-plotting2.PNG" alt="3d plotting 2">
+    <p>Both of the graphs represent the same data. <em>The X and Y </em>represent the coordinates and the Z data represents the height at each point. The color of the graph is determined by the height</p>
+    <h2>Movies</h2>
+    <p>Another plotting technique in MATLAB is animating movies. Essentially, a movie in MATLAB is just a sequence of plots shown sequentially and quickly. Let’s make a movie of the distances each ball travels. To do this, we need to create a plot for each time point and store those graphs in a variable.
+    <ol class="instruction-list">
+        <li>At the Command Prompt, enter the following:</li>
+        <ul>
+            <li><em>for i</em> = 1:length(time)</li>
+            <li><em>plot</em>(distance(:,1:i)’);</li>
+            <li><em>axis</em>([1 11 0 35000]);</li>
+            <li><em>f(i)</em> = getframe; end</li>
+        </ul>
+        <p>Let’s walk through this code. The first line starts a for loop, telling MATLAB to go through the loop for as many times as time has values. </p>
+        <p>The next line plots the first time point till the current time point. So when we go through the loop for the fifth time, for instance, the plot will show the first five time points.</p>
+        <p> The next line sets the <em>axes</em> to be the same on every frame of the movie. And the final line stores the graph in an array.</p>
+        <p>We now have an array f with 11 pictures in it. To play those pictures, we use the movie command.
+            <li>Type <strong>movie(f)</strong>;</li>
+    </ol>
+    </p>
+</section>
+<section class="topic">
+    <h1>Conclusion</h1>
+    <p>The best way to get better at MATLAB is to practice. There are some great resources within the program (like the Help menu and tutorials) that will walk through many of the different functions and syntactical intricacies of the program. Keep at it and soon you will be a MATLAB Master.</p>
+</section>
+</section>
+</section>
+</div>
+<!-- END MAIN CONTENT -->
+</body>
+
+</html>
